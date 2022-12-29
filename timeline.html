@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>太陽計畫 | Archive</title>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="images/icon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <div id="main">
+            <div class="inner">
+
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="index.html" class="logo"><strong>【 ☀ 計畫 】</strong>年表</a>
+                    <ul class="icons">
+                        <li><a href="https://www.facebook.com/groups/489591992328823" target="_blank"
+                                class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
+                    </ul>
+                </header>
+
+                <!-- Banner -->
+                <span href="#" class="BackgroundImage">
+                    <img src="images/bg1.jpg" alt="" />
+                </span>
+
+                <!-- Section -->
+
+                <div class="content">
+                    <iframe class="test" id="frame" src="about:blank"></iframe>
+                </div>
+
+
+
+                <!-- Section -->
+
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+
+                <!-- Search -->
+                <section id="search" class="alt">
+                    <form method="post" action="#">
+                        <input type="text" name="query" id="query" placeholder="Search" />
+                    </form>
+                </section>
+
+                <!-- Menu -->
+                <nav id="menu">
+
+                    <header class="major">
+                        <h2>回到首頁</h2>
+                    </header>
+                    <ul id="menuItems6">
+                        <li><a href="index.html">首頁</a></li>
+                    </ul>
+                    <header class="major">
+                        <h2>列表</h2>
+                    </header>
+                    <ul id="menuItems7">
+                        <li><span href="aboutTL.html">使用說明</span></li>
+                        <li><span href="temp.html">總年表</span></li>
+                        <li><span href="temp.html">時間軸</span></li>
+                        <li><span href="temp.html">史記</span></li>
+                        <li>
+                            <span class="opener" href="temp.html">個人篇章</span>
+                            <ul>
+                                <!-- <li><span href="temp.html">提奧</span></li>
+                                <li><span href="temp.html">瓦爾德馬</span></li>
+                                <li><span href="temp.html">伊里斯</span></li> -->
+                            </ul>
+                        </li>
+                        <li> <span class="opener" href="temp.html">IF線</span>
+                            <ul>
+                                <!-- <li><span href="temp.html"></span></li> -->
+                            </ul>
+                        </li>
+                        <li><span href="temp.html">劇情外紀錄</span></li>
+                    </ul>
+                </nav>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">持續更新中...</p>
+                </footer>
+
+            </div>
+        </div>
+
+    </div>
+    <style>
+        div.content {
+            height: 87%;
+        }
+
+        iframe {
+            border: none;
+            height: 100%;
+            width: 100%;
+            margin: 2.5% 5% 2% 5%;
+            border-radius: 0;
+            /* backdrop-filter: blur(5px); */
+        }
+
+        :root {
+            --PrimaryColor: #a85454;
+            --SColor: #692626;
+            --TColor: #771515;
+        }
+    </style>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // 在眾多的解決方案中，無能的我選擇了最醜陋的一種。
+        document.getElementById('menuItems6').addEventListener('click', (e) => {
+            const href = e.target.getAttribute('href');
+            if (href) {
+                location.hash = '#' + href;
+                $('html,body').animate({ scrollTop: 0 }, 100);// 100ms捲動到頂部
+            }
+        });
+        document.getElementById('menuItems7').addEventListener('click', (e) => {
+            const href = e.target.getAttribute('href');
+            if (href) {
+                location.hash = '#' + href;
+                $('html,body').animate({ scrollTop: 0 }, 100);
+            }
+        });
+        function switchPage() {
+            const hash = window.location.hash;
+            if (hash) {
+                let page = 'about:blank';
+                const target = document.querySelector(`span[href="${hash.substring(1)}"]`);
+                if (target) {
+                    page = target.getAttribute('href');
+                }
+                document.getElementById('frame').setAttribute('src', page);
+            }
+        }
+        window.addEventListener('hashchange', switchPage, false);
+        switchPage();
+    </script>
+
+
+
+</body>
+
+</html>
